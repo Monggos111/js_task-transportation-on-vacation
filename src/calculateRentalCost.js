@@ -13,12 +13,15 @@ function calculateRentalCost(days) {
   let total = DAILY_RENTAL_COST * days;
 
   if (days >= LONG_TERM_DAYS) {
-    total -= LONG_TERM_DISCOUNT;
-  } else if (days >= MEDIUM_TERM_DAYS) {
-    total -= MEDIUM_TERM_DISCOUNT;
-  }
+    return total - LONG_TERM_DISCOUNT;
+}
+
+  if (days >= MEDIUM_TERM_DAYS) {
+    return total - MEDIUM_TERM_DISCOUNT;
+}
 
   return total;
+
 }
 
 module.exports = calculateRentalCost;
